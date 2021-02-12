@@ -1,0 +1,12 @@
+{
+  "name": "InnovationChallenge",
+  "displayName": "InnovationChallenge",
+  "expo": {
+    "name": "InnovationChallenge",
+    "slug": "InnovationChallenge",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
