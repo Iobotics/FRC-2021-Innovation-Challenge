@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import MainPage from './componets/main-page';
-import SocialPage from './componets/social-page';
+import MainPage from './components/main-page';
+import SocialPage from './components/social-page';
 
 const Stack = createStackNavigator();
 
