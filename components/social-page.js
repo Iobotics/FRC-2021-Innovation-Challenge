@@ -4,8 +4,15 @@ import Icon from "react-native-vector-icons/AntDesign";
 export default ({navigation}) => {
 
     return (
-        <Icon
-            name = "smileo"
-        />
+        <>
+            <Icon
+                name = "smileo"
+            />
+            <button
+                onClick = {() => navigation.replace('Home')}
+            >
+                Go Back
+            </button>
+        </>
     );
 }

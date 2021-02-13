@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import MainPage from './components/main-page';
 import SocialPage from './components/social-page';
+import MainSettingsPage from './components/main-settings-page';
 
 const Stack = createStackNavigator();
 
@@ -16,10 +17,20 @@ export default function App() {
         <Stack.Screen
           name = "Home"
           component = {MainPage}
+          options = {{
+            headerShown: false
+          }}
         />
         <Stack.Screen
           name = "Social"
           component = {SocialPage}
+          options = {{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name = "Settings"
+          component = {MainSettingsPage}
         />
       </Stack.Navigator>
     </NavigationContainer>
