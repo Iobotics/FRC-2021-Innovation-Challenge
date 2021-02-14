@@ -22,4 +22,6 @@ target 'InnovationChallenge' do
   #    flipper_post_install(installer)
   #  end
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
 end
