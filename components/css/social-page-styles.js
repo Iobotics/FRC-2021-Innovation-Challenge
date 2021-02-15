@@ -9,9 +9,9 @@ export default StyleSheet.create({
         width: 300,
         height: 300,
         borderRadius: 150,
-        borderWidth: 30,
+        borderWidth: 5,
         borderColor: '#00D3FF',
-        backgroundColor: '#8EE8FF',
+        borderStyle: 'dashed',
         marginTop: '2em',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -27,25 +27,24 @@ export default StyleSheet.create({
         marginTop: '0.25em',
         marginBottom: '0.25em'
     },
-    refresh_bar: {
-        borderWidth: 10,
-        borderRadius: 40,
-        borderColor: '#00D3FF',
-        backgroundColor: '#8EE8FF',
-        marginLeft: '10%',
-        marginRight: '10%',
-        marginTop: '0.5em'
+    icons: {
+        marginTop: 'auto',
+        marginBottom: '0.75em',
+        flexDirection: 'row',
+        justifyContent: 'space-betwee',
+        display: 'flex'
     },
-    refresh: {
-        color: '#00D3FF',
-        margin: 'auto'
+    clothes_div: {
+        height: '4em',
+        width: '4em',
+        borderRadius: '2em',
+        backgroundColor: '#00D3FF',
+        marginLeft: '1em'
     },
     money_bar: {
         borderTopLeftRadius: 20,
         borderBottomLeftRadius: 20,
         marginLeft: 'auto',
-        marginTop: 'auto',
-        marginBottom: '0.75em',
         backgroundColor: '#00D3FF',
         paddingLeft: '2em',
         paddingRight: '2em',
