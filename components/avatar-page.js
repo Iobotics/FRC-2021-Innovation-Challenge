@@ -4,7 +4,7 @@ import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import styles from './css/social-page-styles';
+import styles from './css/avatar-page-styles';
 
 export default ({navigation}) => {
 

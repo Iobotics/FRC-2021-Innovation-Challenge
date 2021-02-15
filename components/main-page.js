@@ -59,7 +59,7 @@ export default ({navigation}) => {
 
                 <View 
                     style = {styles.bar_element_view}
-                    onClick={() => navigation.replace('Social')}
+                    onClick={() => navigation.replace('Avatar')}
                 >
                     <FA5Icon 
                         name = "walking" 
