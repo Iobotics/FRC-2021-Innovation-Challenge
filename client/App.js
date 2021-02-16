@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { StyleSheet } from 'react-native';
 import { useFonts } from 'expo-font';
 
 import MainPage from './components/main-page';
@@ -40,11 +41,7 @@ export default function App() {
           options = {{
             headerBackImage: BackArrow,
             headerTitleAlign: 'center',
-            headerTitleStyle: {
-              color: '#8EE8FF',
-              fontSize: 30,
-              fontFamily: 'Roboto_Regular'
-            }
+            headerTitleStyle: styles.headerText
           }}
         />
       </Stack.Navigator>
@@ -52,3 +49,11 @@ export default function App() {
   );
   
 }
+
+const styles = StyleSheet.create({
+  headerText : {
+    color: '#8EE8FF',
+    fontSize: 30,
+    fontFamily: 'Roboto_Regular'
+  }
+});
