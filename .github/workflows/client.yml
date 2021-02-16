@@ -34,4 +34,6 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Build web app
-        run: expo build:web
+        run: |
+          cd client
+          expo build:web
