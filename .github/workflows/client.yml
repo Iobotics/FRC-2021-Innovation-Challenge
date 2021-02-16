@@ -28,6 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install node modules
         run: |
+          cd client
           npm i
           npm install -g expo-cli
 
