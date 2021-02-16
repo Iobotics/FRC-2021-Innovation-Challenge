@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import FA5Icon from 'react-native-vector-icons/FontAwesome5';
-import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styles from './css/avatar-page-styles';
+
+import MenuBar from './assets/menu-bar';
 
 export default ({navigation}) => {
 
@@ -44,41 +45,7 @@ export default ({navigation}) => {
 
             </View>
 
-            <View style = {styles.bottom_bar}>
-
-                <View style = {styles.bar_element_view}>
-                    <FA5Icon 
-                        name = "walking" 
-                        style = {styles.bar_element} 
-                    />
-
-                </View>
-
-                <View 
-                    style = {[styles.bar_element_view, styles.home_element_view]}
-                    onClick = {() => navigation.replace('Home')}
-                >
-                    
-                    <FA5Icon
-                        name = "home"
-                        style = {styles.home_element}
-                    />
-
-                </View>
-
-                <View 
-                    style = {styles.bar_element_view} 
-                    onClick={() => navigation.navigate('Settings')}
-                >
-                    
-                    <IoniconsIcon
-                        name = "settings-sharp"
-                        style = {styles.bar_element} 
-                    />
-
-                </View>
-
-            </View>
+            <MenuBar navigation = {navigation} />
         </>
     );
 }

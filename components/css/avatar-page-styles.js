@@ -59,31 +59,4 @@ export default StyleSheet.create({
         marginBottom: 'auto',
         fontSize: 40,
     },
-    bottom_bar: {
-        backgroundColor: '#00D3FF',
-        flex: 1,
-        display: 'inline',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        display: 'flex'
-    },
-    bar_element_view: {
-        marginTop: 'auto',
-        marginBottom: 'auto'
-    },
-    home_element_view: {
-        backgroundColor: '#8EE8FF',
-        width: '25%',
-        height: '2.75em',
-        borderRadius: 20,
-    },
-    bar_element: {
-        color: '#8EE8FF',
-        fontSize: 40
-    },
-    home_element: {
-        margin: 'auto',
-        color: '#00D3FF',
-        fontSize: 35 
-    }
 });
