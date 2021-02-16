@@ -15,25 +15,13 @@ export default ({navigation}) => {
             }}
         >
 
-            <SettingsButton text = "Device" style = {{
-                width: '80%',
-                height: '20%'
-            }} />
+            <SettingsButton text = "Device" />
 
-            <SettingsButton text = "Privacy" style = {{
-                width: '80%',
-                height: '20%'
-            }} />
+            <SettingsButton text = "Privacy" />
 
-            <SettingsButton text = "Parental Controls" style = {{
-                width: '80%',
-                height: '20%'
-            }} />
+            <SettingsButton text = "Parental Controls" />
 
-            <SettingsButton text = "Stats" style = {{
-                width: '80%',
-                height: '20%'
-            }} />
+            <SettingsButton text = "Stats" />
 
        </View>
    ) 
