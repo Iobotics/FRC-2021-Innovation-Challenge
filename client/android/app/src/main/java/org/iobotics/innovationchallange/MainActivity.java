@@ -1,4 +1,4 @@
-package com.innovationchallenge;
+package org.iobotics.innovationchallange;
 
 import android.os.Bundle;
 

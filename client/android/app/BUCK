@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.innovationchallenge",
+    package = "org.iobotics.innovationchallange",
 )
 
 android_resource(
     name = "res",
-    package = "com.innovationchallenge",
+    package = "org.iobotics.innovationchallange",
     res = "src/main/res",
 )
 

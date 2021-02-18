@@ -1,4 +1,4 @@
-package com.innovationchallenge.generated;
+package org.iobotics.innovationchallange.generated;
 
 import java.util.Arrays;
 import java.util.List;
