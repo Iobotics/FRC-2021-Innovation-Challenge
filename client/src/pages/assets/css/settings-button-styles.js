@@ -18,6 +18,7 @@ export default StyleSheet.create({
       margin: 'auto',
       fontSize: 40,
       color: '#fff',
-      fontFamily: 'Roboto_Regular'
+      fontFamily: 'Roboto_Regular',
+      textAlign: 'center'
     }
 })

@@ -16,16 +16,16 @@ export default StyleSheet.create({
     home_element_view: {
         backgroundColor: '#8EE8FF',
         width: '25%',
-        height: '3.5em',
+        height: '100%',
         borderRadius: 20,
     },
     bar_element: {
         color: '#8EE8FF',
-        fontSize: 50
+        fontSize: 30
     },
     home_element: {
         margin: 'auto',
         color: '#00D3FF',
-        fontSize: 45 
+        fontSize: 25 
     }
 });
