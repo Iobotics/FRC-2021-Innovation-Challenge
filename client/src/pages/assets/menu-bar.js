@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
@@ -12,40 +12,50 @@ export default (props) => {
     return (
         <View style = {styles.bottom_bar}>
 
-                <View 
-                    style = {styles.bar_element_view}
-                    onClick={() => navigation.replace('Avatar')}
-                >
-                    <FA5Icon 
-                        name = "walking" 
-                        style = {styles.bar_element} 
-                    />
+                <TouchableOpacity onPress = {() => navigation.replace('Avatar')}>
 
-                </View>
+                    <View 
+                        style = {styles.bar_element_view}
+                    >
+                        <FA5Icon 
+                            name = "walking" 
+                            style = {styles.bar_element} 
+                        />
 
-                <View 
-                    style = {[styles.bar_element_view, styles.home_element_view]}
-                    onClick={() => navigation.replace('Home')}
-                >
+                    </View>
+
+                </TouchableOpacity>
+
+
+                <TouchableOpacity onPress = {() => navigation.replace('Home')}>
+
+                    <View 
+                        style = {[styles.bar_element_view, styles.home_element_view]}
+                    >
                     
-                    <FA5Icon
-                        name = "home"
-                        style = {styles.home_element}
-                    />
+                        <FA5Icon
+                            name = "home"
+                            style = {styles.home_element}
+                        />
 
-                </View>
+                    </View>
 
-                <View 
-                    style = {styles.bar_element_view} 
-                    onClick={() => navigation.navigate('Settings')}
-                >
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress = {() => navigation.navigate('Settings')}>
                     
-                    <IoniconsIcon
-                        name = "settings-sharp"
-                        style = {styles.bar_element} 
-                    />
+                    <View 
+                        style = {styles.bar_element_view} 
+                    >
+                    
+                        <IoniconsIcon
+                            name = "settings-sharp"
+                            style = {styles.bar_element} 
+                        />
 
-                </View>
+                    </View>
+                    
+                </TouchableOpacity>
 
             </View>
     )

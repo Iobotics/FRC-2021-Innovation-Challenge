@@ -10,15 +10,19 @@ export default StyleSheet.create({
         backgroundColor: '#00D3FF',
         borderRadius: 25,
         width: '75%',
-        height: '7.5em',
+        height: 130,
         marginLeft: 'auto',
-        marginRight: 'auto'
+        marginRight: 'auto',
+        marginVertical: 10,
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column'
     },
     text: {
-      margin: 'auto',
-      fontSize: 40,
-      color: '#fff',
-      fontFamily: 'Roboto_Regular',
-      textAlign: 'center'
+        margin: 'auto',
+        fontSize: 40,
+        color: '#fff',
+        fontFamily: 'Roboto-Regular',
+        textAlign: 'center'
     }
 })

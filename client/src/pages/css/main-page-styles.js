@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     main: {
         backgroundColor: "#fff",
-        flex: 15,
+        flex: 10,
     },
     circle: {
         width: 300,
@@ -12,7 +12,7 @@ export default StyleSheet.create({
         borderWidth: 30,
         borderColor: '#00D3FF',
         backgroundColor: '#8EE8FF',
-        marginTop: '2em',
+        marginTop: '10%',
         marginLeft: 'auto',
         marginRight: 'auto',
         flexDirection: 'column',
@@ -24,9 +24,9 @@ export default StyleSheet.create({
         fontSize: 60,
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: '0.25em',
-        marginBottom: '0.25em',
-        fontFamily: 'Roboto_Regular'
+        marginTop: 10,
+        marginBottom: 10,
+        fontFamily: 'Roboto-Regular'
     },
     refresh_bar: {
         borderWidth: 10,
@@ -35,26 +35,26 @@ export default StyleSheet.create({
         backgroundColor: '#8EE8FF',
         marginLeft: '10%',
         marginRight: '10%',
-        marginTop: '0.5em'
+        marginTop: '5%',
     },
     refresh: {
         color: '#00D3FF',
-        margin: 'auto'
+        textAlign: 'center'
     },
     money_bar: {
         borderTopLeftRadius: 20,
         borderBottomLeftRadius: 20,
         marginLeft: 'auto',
         marginTop: 'auto',
-        marginBottom: '0.75em',
+        marginBottom: '2%',
         backgroundColor: '#00D3FF',
-        paddingLeft: '2em',
-        paddingRight: '2em',
-        height: '4em',
+        paddingLeft: '5%',
+        paddingRight: '5%',
+        height: 50,
         flexDirection: 'row',
         justifyContent: 'center',
         display: 'flex',
-        fontFamily: 'Roboto_Regular'
+        fontFamily: 'Roboto-Regular'
     },
     money_text: {
         color: '#8EE8FF',

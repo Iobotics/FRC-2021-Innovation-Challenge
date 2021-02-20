@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet } from 'react-native';
 import { useFonts } from 'expo-font';
 
-//import { BleManager } from 'react-native-ble-plx'
+import { BleManager } from 'react-native-ble-plx'
 
 import MainPage from '../pages/main-page';
 import AvatarPage from '../pages/avatar-page';
@@ -52,12 +52,12 @@ export default function App() {
   
 }
 
-//export const bleManager = new BleManager();
+export const bleManager = new BleManager();
 
 const styles = StyleSheet.create({
   headerText : {
     color: '#8EE8FF',
     fontSize: 30,
-    fontFamily: 'Roboto_Regular'
+    fontFamily: 'Roboto-Regular'
   }
 });

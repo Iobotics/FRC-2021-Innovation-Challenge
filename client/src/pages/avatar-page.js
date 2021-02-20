@@ -27,7 +27,7 @@ export default ({navigation}) => {
 
                         <MCIcon
                             name = "hanger"
-                            style = {[styles.money_text, {margin: 'auto'}]}
+                            style = {[styles.money_text, {textAlign: 'center'}]}
                         />
 
                     </View>

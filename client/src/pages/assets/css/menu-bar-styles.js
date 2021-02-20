@@ -15,17 +15,21 @@ export default StyleSheet.create({
     },
     home_element_view: {
         backgroundColor: '#8EE8FF',
-        width: '25%',
+        width: 100,
         height: '100%',
         borderRadius: 20,
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column'
     },
     bar_element: {
         color: '#8EE8FF',
-        fontSize: 30
+        fontSize: 35
     },
     home_element: {
         margin: 'auto',
         color: '#00D3FF',
-        fontSize: 25 
+        fontSize: 35 ,
+        textAlign: 'center'
     }
 });

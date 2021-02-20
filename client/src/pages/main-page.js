@@ -6,6 +6,7 @@ import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import styles from './css/main-page-styles';
 
 import MenuBar from './assets/menu-bar';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default ({navigation}) => {
 
@@ -30,21 +31,24 @@ export default ({navigation}) => {
 
                 </View>
 
-                <View 
-                    style = {styles.refresh_bar} 
-                    onClick = {() => setSteps(steps+1)}
-                >
-                    <IoniconsIcon
-                        name = "refresh"
-                        size = {40}
-                        style = {styles.refresh}
-                    />
+                <TouchableOpacity onPress = {() => setSteps(steps+1)}>
 
-                </View>
+                    <View 
+                        style = {styles.refresh_bar} 
+                    >
+                        <IoniconsIcon
+                            name = "refresh"
+                            size = {40}
+                            style = {styles.refresh}
+                        />
+
+                    </View>
+                    
+                </TouchableOpacity>
 
                 <View style = {styles.money_bar}>
 
-                    <Text style = {[styles.money_text, {marginRight: '0.6em'}]}>
+                    <Text style = {[styles.money_text, {marginRight: 15}]}>
                         {money}
                     </Text>
 

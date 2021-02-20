@@ -1,15 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 import SettingsButton from './assets/settings-button';
 
 export default ({navigation}) => {
    return (
-        <View
+        <ScrollView
             style = {{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-around',
                 backgroundColor: '#fff',
                 flex: 1
             }}
@@ -23,6 +20,6 @@ export default ({navigation}) => {
 
             <SettingsButton text = "Stats" />
 
-       </View>
+       </ScrollView>
    ) 
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 
 import styles from './css/back-button-styles';

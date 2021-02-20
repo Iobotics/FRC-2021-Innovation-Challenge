@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     main: {
         backgroundColor: "#fff",
-        flex: 15,
+        flex: 10,
     },
     circle: {
         width: 300,
@@ -12,7 +12,7 @@ export default StyleSheet.create({
         borderWidth: 5,
         borderColor: '#00D3FF',
         borderStyle: 'dashed',
-        marginTop: '2em',
+        marginTop: '10%',
         marginLeft: 'auto',
         marginRight: 'auto',
         flexDirection: 'column',
@@ -24,32 +24,32 @@ export default StyleSheet.create({
         fontSize: 60,
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: '0.25em',
-        marginBottom: '0.25em',
-        fontFamily: 'Roboto_Regular'
+        marginTop: 20,
+        marginBottom: 20,
+        fontFamily: 'Roboto-Regular'
     },
     icons: {
         marginTop: 'auto',
-        marginBottom: '0.75em',
+        marginBottom: '2%',
         flexDirection: 'row',
         justifyContent: 'space-between',
         display: 'flex'
     },
     clothes_div: {
-        height: '4em',
-        width: '4em',
-        borderRadius: '2em',
+        height: 50,
+        width: 50,
+        borderRadius: 25,
         backgroundColor: '#00D3FF',
-        marginLeft: '1em'
+        marginLeft: '5%'
     },
     money_bar: {
         borderTopLeftRadius: 20,
         borderBottomLeftRadius: 20,
         marginLeft: 'auto',
         backgroundColor: '#00D3FF',
-        paddingLeft: '2em',
-        paddingRight: '2em',
-        height: '4em',
+        paddingLeft: '5%',
+        paddingRight: '5%',
+        height: 50,
         flexDirection: 'row',
         justifyContent: 'center',
         display: 'flex'
@@ -59,6 +59,6 @@ export default StyleSheet.create({
         marginTop: 'auto',
         marginBottom: 'auto',
         fontSize: 40,
-        fontFamily: 'Roboto_Regular'
+        fontFamily: 'Roboto-Regular'
     },
 });
