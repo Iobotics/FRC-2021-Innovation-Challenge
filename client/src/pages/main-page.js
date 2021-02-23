@@ -8,9 +8,13 @@ import styles from './css/main-page-styles';
 import MenuBar from './assets/menu-bar';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+import {getStepsGQL, setStepsGQL} from '../network/graphql/steps';
+
 export default ({navigation}) => {
 
     const [steps, setSteps] = useState(0);
+
+    getStepsGQL(setSteps);
 
     const [money, setMoney] = useState(0);
 
@@ -31,7 +35,7 @@ export default ({navigation}) => {
 
                 </View>
 
-                <TouchableOpacity onPress = {() => setSteps(steps+1)}>
+                <TouchableOpacity onPress = {() => setStepsGQL(setSteps)}>
 
                     <View 
                         style = {styles.refresh_bar} 
