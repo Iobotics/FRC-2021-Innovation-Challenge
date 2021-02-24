@@ -33,7 +33,7 @@ jobs:
           sudo npm i -g typescript
           yarn install
       # Runs a set of commands using the runners shell
-      - name: Build web app
+      - name: Build API
         run: |
           cd api
-          tsc -w
+          tsc
