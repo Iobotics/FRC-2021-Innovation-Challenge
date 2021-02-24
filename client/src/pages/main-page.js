@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
@@ -8,15 +8,28 @@ import styles from './css/main-page-styles';
 import MenuBar from './assets/menu-bar';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-import {getStepsGQL, setStepsGQL} from '../network/graphql/steps';
+import { getStepsGQL, setStepsGQL } from '../network/graphql/steps';
+import { getMoneyGQL, setMoneyGQL } from '../network/graphql/money';
 
 export default ({navigation}) => {
 
     const [steps, setSteps] = useState(0);
 
-    getStepsGQL(setSteps);
-
     const [money, setMoney] = useState(0);
+
+    useEffect(() => { 
+        getStepsGQL().then(data => {
+            setSteps(data); 
+          
+            console.log("Current steps: " + data)
+        });
+
+        getMoneyGQL().then(data => {
+            setMoney(data);
+
+            console.log("Current money: " + data)
+        })
+    }, []);
 
     return (
         <>
@@ -35,7 +48,11 @@ export default ({navigation}) => {
 
                 </View>
 
-                <TouchableOpacity onPress = {() => setStepsGQL(setSteps)}>
+                <TouchableOpacity onPress = {() => setStepsGQL(steps+1).then(data => {
+                    setSteps(data); 
+          
+                    console.log("Updated steps to: " + data)
+                })}>
 
                     <View 
                         style = {styles.refresh_bar} 

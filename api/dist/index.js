@@ -8,4 +8,5 @@ const graphql_1 = __importDefault(require("./graphql/graphql"));
 const app = express_1.default();
 app.use('/graphql', graphql_1.default);
 app.listen(4000);
+console.log("Started");
 //# sourceMappingURL=index.js.map

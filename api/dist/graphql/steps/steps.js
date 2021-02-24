@@ -6,8 +6,8 @@ function getSteps() {
     return test;
 }
 exports.getSteps = getSteps;
-function setSteps() {
-    test++;
+function setSteps(data) {
+    test = data.amount;
     return test;
 }
 exports.setSteps = setSteps;

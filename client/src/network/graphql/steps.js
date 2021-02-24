@@ -1,25 +1,12 @@
-export function getSteps(setSteps) {
-    fetch('localhost:4000/graphql', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({query: "{ getSteps }"})
-      })
-        .then(r => r.json())
-        .then(data => setSteps(data.getSteps));
+import fetchGQL from './common/fetch';
+
+export function getStepsGQL() {
+    return fetchGQL({query: "{ getSteps }"})
+        .then(data =>  data.data.getSteps)
 }
 
-export function setSteps(setSteps) {
-    fetch('localhost:4000/graphql', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({query: "mutation { setSteps }"})
-      })
-        .then(r => r.json())
-        .then(data => setSteps(data.setSteps));
+export function setStepsGQL(amount) {
+  return fetchGQL({query: "mutation SetSteps($amount: Int!) { setSteps(amount: $amount) }", variables: { amount }})
+      .then( data => {console.log(data); return data})
+      .then(data =>  data.data.setSteps)
 }

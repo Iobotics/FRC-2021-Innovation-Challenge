@@ -2,29 +2,34 @@ import { graphqlHTTP } from "express-graphql";
 import { buildSchema } from "graphql";
 
 import { getSteps, setSteps } from "./steps/steps";
+import { getMoney, setMoney } from "./money/money";
 
 const schema = buildSchema(`
     type Query {
         getSteps: Int
+
+        getMoney: Int
     }
 
     type Mutation {
-        setSteps: Int
+        setSteps(amount: Int!) : Int
+
+        setMoney(amount: Int!): Int
     }
 `);
-
-let test = 0;
 
 const root = {
     getSteps: getSteps,
 
-    setSteps: setSteps
+    setSteps: setSteps,
+
+    getMoney: getMoney,
+
+    setMoney: setMoney
 }
 
-const graphql = graphqlHTTP({
+export default graphqlHTTP({
     schema: schema,
     rootValue: root,
     graphiql: true
 });
-
-export default graphql;

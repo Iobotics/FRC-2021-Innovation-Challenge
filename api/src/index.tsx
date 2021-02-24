@@ -7,3 +7,4 @@ const app = express();
 app.use('/graphql', graphql);
 
 app.listen(4000);
+console.log("Started")
