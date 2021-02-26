@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet } from 'react-native';
-import { useFonts } from 'expo-font';
+import { StatusBar, StyleSheet } from 'react-native';
 
 import { BleManager } from 'react-native-ble-plx'
 
@@ -16,38 +15,37 @@ const Stack = createStackNavigator();
 
 export default function App() {
 
-  const [loaded] = useFonts({
-    Roboto_Regular: require('../../assets/fonts/Roboto-Regular.ttf')
-  })
-
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name = "Home"
-          component = {MainPage}
-          options = {{
-            headerShown: false
-          }}
-        />
-        <Stack.Screen
-          name = "Avatar"
-          component = {AvatarPage}
-          options = {{
-            headerShown: false
-          }}
-        />
-        <Stack.Screen
-          name = "Settings"
-          component = {MainSettingsPage}
-          options = {{
-            headerBackImage: BackArrow,
-            headerTitleAlign: 'center',
-            headerTitleStyle: styles.headerText
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      <StatusBar animated = {true} barStyle = "light-content"/>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name = "Home"
+            component = {MainPage}
+            options = {{
+              headerShown: false
+            }}
+          />
+          <Stack.Screen
+            name = "Avatar"
+            component = {AvatarPage}
+            options = {{
+              headerShown: false
+            }}
+          />
+          <Stack.Screen
+            name = "Settings"
+            component = {MainSettingsPage}
+            options = {{
+              headerBackImage: BackArrow,
+              headerTitleAlign: 'center',
+              headerTitleStyle: styles.headerText
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
   
 }

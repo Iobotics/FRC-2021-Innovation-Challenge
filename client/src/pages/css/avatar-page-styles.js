@@ -26,7 +26,7 @@ export default StyleSheet.create({
         marginRight: 'auto',
         marginTop: 20,
         marginBottom: 20,
-        fontFamily: 'Roboto-Regular'
+        fontFamily: 'Acumin-Pro'
     },
     icons: {
         marginTop: 'auto',
@@ -59,6 +59,6 @@ export default StyleSheet.create({
         marginTop: 'auto',
         marginBottom: 'auto',
         fontSize: 40,
-        fontFamily: 'Roboto-Regular'
+        fontFamily: 'Acumin-Pro'
     },
 });

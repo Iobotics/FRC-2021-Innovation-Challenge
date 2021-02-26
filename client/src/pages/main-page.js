@@ -19,16 +19,18 @@ export default ({navigation}) => {
 
     useEffect(() => { 
         getStepsGQL().then(data => {
-            setSteps(data); 
+            if (data)
+                setSteps(data); 
           
             console.log("Current steps: " + data)
-        });
+        }).catch(err => console.error(err));;
 
         getMoneyGQL().then(data => {
-            setMoney(data);
+            if (data)
+                setMoney(data);
 
             console.log("Current money: " + data)
-        })
+        }).catch(err => console.error(err));
     }, []);
 
     return (
@@ -48,11 +50,12 @@ export default ({navigation}) => {
 
                 </View>
 
-                <TouchableOpacity onPress = {() => setStepsGQL(steps+1).then(data => {
-                    setSteps(data); 
-          
-                    console.log("Updated steps to: " + data)
-                })}>
+                <TouchableOpacity onPress = {() => {
+                    let newSteps = steps+1;
+
+                    setSteps(newSteps);
+                    setStepsGQL(newSteps);
+                }}>
 
                     <View 
                         style = {styles.refresh_bar} 
