@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StatusBar, StyleSheet } from 'react-native';
+import { StatusBar, StyleSheet, Platform } from 'react-native';
 
-import { BleManager } from 'react-native-ble-plx'
+import BlePermissionsAndroid from '../bluetooth/permissions/bluetooth-permissions';
 
 import MainPage from '../pages/main-page';
 import AvatarPage from '../pages/avatar-page';
@@ -14,6 +14,9 @@ import BackArrow from '../pages/assets/back-arrow';
 const Stack = createStackNavigator();
 
 export default function App() {
+
+  if (Platform.OS = "android")
+    BlePermissionsAndroid();
 
   return (
     <>
@@ -49,8 +52,6 @@ export default function App() {
   );
   
 }
-
-export const bleManager = new BleManager();
 
 const styles = StyleSheet.create({
   headerText : {

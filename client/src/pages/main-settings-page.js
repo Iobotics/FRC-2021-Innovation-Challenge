@@ -3,7 +3,7 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
 import SettingsButton from './assets/settings-button';
 
-import { bleManager } from '../app/App';
+import bleManager from '../bluetooth/manager/bluetooth-manager';
 
 export default ({navigation}) => {
    return (
