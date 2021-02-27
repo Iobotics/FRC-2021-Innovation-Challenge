@@ -15,7 +15,7 @@ const Stack = createStackNavigator();
 
 export default function App() {
 
-  if (Platform.OS = "android")
+  if (Platform.OS == "android")
     BlePermissionsAndroid();
 
   return (
@@ -56,7 +56,7 @@ export default function App() {
 const styles = StyleSheet.create({
   headerText : {
     color: '#8EE8FF',
-    fontSize: 30,
-    fontFamily: 'Roboto-Regular'
+    fontSize: 35,
+    fontFamily: 'Acumin-Pro'
   }
 });

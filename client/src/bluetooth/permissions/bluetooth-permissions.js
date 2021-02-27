@@ -5,6 +5,7 @@ export default async () => {
         const granted = await PermissionsAndroid.request(
             PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
             {
+                title: 'Location Access',
                 message: "This permission is required to use bluetooth on your device."
             }
         );
@@ -14,6 +15,7 @@ export default async () => {
         } else {
             console.log("Declined.");
         }
+        
     } catch(err) {
         console.warn(err);
     }

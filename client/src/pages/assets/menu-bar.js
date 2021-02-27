@@ -15,7 +15,7 @@ export default (props) => {
     return (
         <View style = {styles.bottom_bar}>
 
-                <TouchableOpacity onPress = {() =>  {if (page !== 'Avatar') navigation.navigate('Avatar');}} activeOpacity = {0.5}>
+                <TouchableOpacity onPress = {() =>  {navigation.navigate('Avatar')}} activeOpacity = {0.5} disabled = {page == 'Avatar'} >
 
                     <View 
                         style = {styles.bar_element_view}
@@ -30,7 +30,7 @@ export default (props) => {
                 </TouchableOpacity>
 
 
-                <TouchableOpacity onPress = {() => {if (page !== 'Home') navigation.navigate('Home'); }} activeOpacity = {0.5}>
+                <TouchableOpacity onPress = {() => {navigation.navigate('Home')}} activeOpacity = {0.5} disabled = {page == 'Home'}>
 
                     <View 
                         style = {[styles.bar_element_view, styles.home_element_view]}
