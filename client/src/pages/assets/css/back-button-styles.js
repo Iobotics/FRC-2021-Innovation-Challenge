@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native';
+import { backColor } from '../../css/colors';
 
 export default StyleSheet.create({
     arrow: {
-        color: '#8EE8FF',
+        color: backColor,
         margin: 'auto',
         fontSize: 50
     }

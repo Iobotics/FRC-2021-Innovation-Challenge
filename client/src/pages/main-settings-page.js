@@ -5,19 +5,20 @@ import SettingsButton from './assets/settings-button';
 
 import bleManager from '../bluetooth/manager/bluetooth-manager';
 
+import { backgroundColor } from './css/colors';
+
 export default ({navigation}) => {
    return (
         <ScrollView
             style = {{
-                backgroundColor: '#fff',
+                backgroundColor: backgroundColor,
                 flex: 1
             }}
         >
 
             <TouchableOpacity onPress = {() => {
                 bleManager.startDeviceScan(null, null, (error, device) => {
-                    console.log(error);
-                    console.log(device);
+                    console.log(device.id);
 
                     bleManager.stopDeviceScan();
                 });

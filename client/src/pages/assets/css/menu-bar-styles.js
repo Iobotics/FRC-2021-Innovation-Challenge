@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native';
 
+import { backColor, forColor } from '../../css/colors';
+
 export default StyleSheet.create({
     bottom_bar: {
-        backgroundColor: '#00D3FF',
+        backgroundColor: backColor,
         flex: 1,
         display: 'inline',
         flexDirection: 'row',
@@ -14,22 +16,21 @@ export default StyleSheet.create({
         marginBottom: 'auto'
     },
     home_element_view: {
-        backgroundColor: '#8EE8FF',
+        backgroundColor: forColor,
         width: 100,
-        height: '100%',
+        height: '90%',
         borderRadius: 20,
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column'
     },
     bar_element: {
-        color: '#8EE8FF',
+        color: forColor,
         fontSize: 35
     },
     home_element: {
         margin: 'auto',
-        color: '#00D3FF',
-        fontSize: 35 ,
+        color: backColor,
         textAlign: 'center'
     }
 });

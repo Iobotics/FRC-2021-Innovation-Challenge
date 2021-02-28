@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native'
 
+import {backgroundColor, backColor, forColor } from './colors';
+
 export default StyleSheet.create({
     main: {
-        backgroundColor: "#fff",
+        backgroundColor: backgroundColor,
         flex: 10,
     },
     circle: {
@@ -10,7 +12,7 @@ export default StyleSheet.create({
         height: 300,
         borderRadius: 150,
         borderWidth: 5,
-        borderColor: '#00D3FF',
+        borderColor: backColor,
         borderStyle: 'dashed',
         marginTop: '10%',
         marginLeft: 'auto',
@@ -20,7 +22,7 @@ export default StyleSheet.create({
         display: 'flex'
     },
     circle_text: {
-        color: '#00D3FF',
+        color: backColor,
         fontSize: 60,
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -39,14 +41,14 @@ export default StyleSheet.create({
         height: 50,
         width: 50,
         borderRadius: 25,
-        backgroundColor: '#00D3FF',
+        backgroundColor: backColor,
         marginLeft: '5%'
     },
     money_bar: {
         borderTopLeftRadius: 20,
         borderBottomLeftRadius: 20,
         marginLeft: 'auto',
-        backgroundColor: '#00D3FF',
+        backgroundColor: backColor,
         paddingLeft: '5%',
         paddingRight: '5%',
         height: 50,
@@ -55,7 +57,7 @@ export default StyleSheet.create({
         display: 'flex'
     },
     money_text: {
-        color: '#8EE8FF',
+        color: forColor,
         marginTop: 'auto',
         marginBottom: 'auto',
         fontSize: 40,

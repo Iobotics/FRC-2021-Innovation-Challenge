@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar, StyleSheet, Platform } from 'react-native';
 
-import BlePermissionsAndroid from '../bluetooth/permissions/bluetooth-permissions';
+import BlePermissions from '../bluetooth/permissions/bluetooth-permissions';
 
 import MainPage from '../pages/main-page';
 import AvatarPage from '../pages/avatar-page';
@@ -11,12 +11,13 @@ import MainSettingsPage from '../pages/main-settings-page';
 
 import BackArrow from '../pages/assets/back-arrow';
 
+import { backgroundColor, backColor } from '../pages/css/colors';
+
 const Stack = createStackNavigator();
 
 export default function App() {
 
-  if (Platform.OS == "android")
-    BlePermissionsAndroid();
+  BlePermissions();
 
   return (
     <>
@@ -43,7 +44,8 @@ export default function App() {
             options = {{
               headerBackImage: BackArrow,
               headerTitleAlign: 'center',
-              headerTitleStyle: styles.headerText
+              headerTitleStyle: styles.headerText,
+              headerStyle: styles.header
             }}
           />
         </Stack.Navigator>
@@ -55,8 +57,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
   headerText : {
-    color: '#8EE8FF',
+    color: backColor,
     fontSize: 35,
     fontFamily: 'Acumin-Pro'
+  },
+  header: {
+    backgroundColor: backgroundColor
   }
 });

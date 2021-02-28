@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native'
+import { backgroundColor, backColor, forColor } from "./colors";
 
 export default StyleSheet.create({
     main: {
-        backgroundColor: "#fff",
+        backgroundColor: backgroundColor,
         flex: 10,
     },
     circle: {
@@ -10,8 +11,8 @@ export default StyleSheet.create({
         height: 300,
         borderRadius: 150,
         borderWidth: 30,
-        borderColor: '#00D3FF',
-        backgroundColor: '#8EE8FF',
+        borderColor: backColor,
+        backgroundColor: forColor,
         marginTop: '10%',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -20,7 +21,7 @@ export default StyleSheet.create({
         display: 'flex'
     },
     circle_text: {
-        color: '#00D3FF',
+        color: backColor,
         fontSize: 60,
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -31,14 +32,14 @@ export default StyleSheet.create({
     refresh_bar: {
         borderWidth: 10,
         borderRadius: 40,
-        borderColor: '#00D3FF',
-        backgroundColor: '#8EE8FF',
+        borderColor: backColor,
+        backgroundColor: forColor,
         marginLeft: '10%',
         marginRight: '10%',
         marginTop: '5%',
     },
     refresh: {
-        color: '#00D3FF',
+        color: backColor,
         textAlign: 'center'
     },
     money_bar: {
@@ -47,7 +48,7 @@ export default StyleSheet.create({
         marginLeft: 'auto',
         marginTop: 'auto',
         marginBottom: '2%',
-        backgroundColor: '#00D3FF',
+        backgroundColor: backColor,
         paddingLeft: '5%',
         paddingRight: '5%',
         height: 50,
@@ -57,7 +58,7 @@ export default StyleSheet.create({
         fontFamily: 'Acumin-Pro'
     },
     money_text: {
-        color: '#8EE8FF',
+        color: forColor,
         marginTop: 'auto',
         marginBottom: 'auto',
         fontSize: 40,

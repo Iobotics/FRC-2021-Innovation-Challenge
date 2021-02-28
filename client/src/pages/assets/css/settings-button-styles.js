@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { backColor, forColor } from '../../css/colors';
 
 export default StyleSheet.create({
     view: {
@@ -6,8 +7,8 @@ export default StyleSheet.create({
             width: 7,
             height: 7,
         },
-        shadowColor: '#8EE8FF',
-        backgroundColor: '#00D3FF',
+        shadowColor: forColor,
+        backgroundColor: backColor,
         borderRadius: 25,
         width: '75%',
         height: 130,
@@ -21,7 +22,7 @@ export default StyleSheet.create({
     text: {
         margin: 'auto',
         fontSize: 40,
-        color: '#fff',
+        color: forColor,
         fontFamily: 'Acumin-Pro',
         textAlign: 'center'
     }

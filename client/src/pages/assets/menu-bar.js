@@ -38,7 +38,7 @@ export default (props) => {
                     
                         <FA5Icon
                             name = "home"
-                            style = {styles.home_element}
+                            style = {[styles.bar_element, styles.home_element]}
                         />
 
                     </View>
