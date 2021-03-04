@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar, StyleSheet, Platform } from 'react-native';
@@ -13,11 +13,16 @@ import BackArrow from '../pages/assets/back-arrow';
 
 import { backgroundColor, backColor } from '../pages/css/colors';
 
+import SQLManager from '../storage/SQL-manager';
+
 const Stack = createStackNavigator();
 
 export default function App() {
 
-  BlePermissions();
+  useEffect(() => {
+    SQLManager.open();
+    BlePermissions();
+  }, []);
 
   return (
     <>
