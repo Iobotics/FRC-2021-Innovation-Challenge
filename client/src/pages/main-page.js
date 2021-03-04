@@ -23,14 +23,14 @@ export default ({navigation}) => {
                 setSteps(data); 
           
             console.log("Current steps: " + data)
-        }).catch(err => console.error(err));;
+        }).catch(err => console.warn(err));;
 
         getMoneyGQL().then(data => {
             if (data)
                 setMoney(data);
 
             console.log("Current money: " + data)
-        }).catch(err => console.error(err));
+        }).catch(err => console.warn(err));
     }, []);
 
     return (

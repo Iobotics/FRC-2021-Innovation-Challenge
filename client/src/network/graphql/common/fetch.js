@@ -7,4 +7,4 @@ export default (params) => fetch('http://10.0.2.2:4000/graphql', {
     body: JSON.stringify(params)
   })
 .then(r => r.json())
-.catch(err => console.error(err));
+.catch(err => console.warn(err));

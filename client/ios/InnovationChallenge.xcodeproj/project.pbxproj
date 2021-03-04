@@ -32,10 +32,9 @@
 		322BAC807D114FD6A9E628AA /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		3602AE567B504756857A0068 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		3EBA9FF7BA7E4878B58F8CA6 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		45BD7449F8C94654957631AB /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		49290303ECA94B7CB61FF2D4 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		665D403686DC4B56B152AAE5 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		6FAA878FA3EE4544B80A427F /* Acumin-Pro.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Acumin-Pro.ttf"; path = "../assets/fonts/Acumin-Pro.ttf"; sourceTree = "<group>"; };
+		6FAA878FA3EE4544B80A427F /* Acumin-Pro.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Acumin-Pro.ttf"; path = "../assets/fonts/Acumin-Pro.ttf"; sourceTree = "<group>"; };
 		8FC456908E60487382FE2003 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		9C2E31CBF4CB4E29BF473CB7 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		9FF5B9370F0966D87E484556 /* libPods-InnovationChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InnovationChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +93,6 @@
 		6DFAE98FA8AC4FCEA934B08D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				45BD7449F8C94654957631AB /* Roboto-Regular.ttf */,
 				B11A8D2C30794C75AD8668BB /* AntDesign.ttf */,
 				BE5EB612D61B47A5BDB016E5 /* Entypo.ttf */,
 				3EBA9FF7BA7E4878B58F8CA6 /* EvilIcons.ttf */,
@@ -373,7 +371,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06C99BFAAF27E7A88C4B6593 /* Pods-InnovationChallenge.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = InnovationChallenge/innovationchallange.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -408,7 +405,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A339012314AB7182B0A0FDC0 /* Pods-InnovationChallenge.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = InnovationChallenge/innovationchallange.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";

@@ -3,7 +3,8 @@ import { request, check, PERMISSIONS, RESULTS } from 'react-native-permissions';
 const LOCATION = PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION;
 
 export default async () => {
-    if (check(LOCATION)) {
+    const current = await check(LOCATION);
+    if (current !== RESULTS.GRANTED) {
         try {
             const granted = await request(
                 LOCATION,

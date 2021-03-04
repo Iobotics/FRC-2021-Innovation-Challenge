@@ -13,14 +13,14 @@ import BackArrow from '../pages/assets/back-arrow';
 
 import { backgroundColor, backColor } from '../pages/css/colors';
 
-import SQLManager from '../storage/SQL-manager';
+import VitalsManager from '../storage/managers/vitals-manager';
 
 const Stack = createStackNavigator();
 
 export default function App() {
 
   useEffect(() => {
-    SQLManager.open();
+    VitalsManager.open();
     BlePermissions();
   }, []);
 
