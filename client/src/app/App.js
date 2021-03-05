@@ -13,14 +13,11 @@ import BackArrow from '../pages/assets/back-arrow';
 
 import { backgroundColor, backColor } from '../pages/css/colors';
 
-import VitalsManager from '../storage/managers/vitals-manager';
-
 const Stack = createStackNavigator();
 
 export default function App() {
 
   useEffect(() => {
-    VitalsManager.open();
     BlePermissions();
   }, []);
 

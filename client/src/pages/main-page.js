@@ -11,6 +11,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { getStepsGQL, setStepsGQL } from '../network/graphql/steps';
 import { getMoneyGQL, setMoneyGQL } from '../network/graphql/money';
 
+import VitalsManager from '../storage/managers/vitals-manager';
+
 export default ({navigation}) => {
 
     const [steps, setSteps] = useState(0);
@@ -18,12 +20,14 @@ export default ({navigation}) => {
     const [money, setMoney] = useState(0);
 
     useEffect(() => { 
-        getStepsGQL().then(data => {
-            if (data)
-                setSteps(data); 
-          
-            console.log("Current steps: " + data)
-        }).catch(err => console.warn(err));;
+        VitalsManager.getSteps().then(data => setSteps(data), () => {
+            getStepsGQL().then(data => {
+                if (data)
+                    setSteps(data); 
+              
+                console.log("Current steps: " + data)
+            }).catch(err => console.warn(err));
+        });
 
         getMoneyGQL().then(data => {
             if (data)
@@ -52,6 +56,8 @@ export default ({navigation}) => {
 
                 <TouchableOpacity onPress = {() => {
                     let newSteps = steps+1;
+
+                    VitalsManager.inputSteps(steps);
 
                     setSteps(newSteps);
                     setStepsGQL(newSteps);
