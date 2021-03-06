@@ -20,14 +20,7 @@ export default ({navigation}) => {
     const [money, setMoney] = useState(0);
 
     useEffect(() => { 
-        VitalsManager.getSteps().then(data => setSteps(data), () => {
-            getStepsGQL().then(data => {
-                if (data)
-                    setSteps(data); 
-              
-                console.log("Current steps: " + data)
-            }).catch(err => console.warn(err));
-        });
+        VitalsManager.getSteps(setSteps);
 
         getMoneyGQL().then(data => {
             if (data)
@@ -57,7 +50,7 @@ export default ({navigation}) => {
                 <TouchableOpacity onPress = {() => {
                     let newSteps = steps+1;
 
-                    VitalsManager.inputSteps(steps);
+                    VitalsManager.inputValues(newSteps, money);
 
                     setSteps(newSteps);
                     setStepsGQL(newSteps);
