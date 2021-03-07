@@ -5,7 +5,7 @@ class VitalsManager extends SQLManager {
     constructor() {
         super("vitals");
 
-        this.deleteTable();
+        //this.deleteTable();
 
         this.createStepsTable();
     }

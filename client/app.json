@@ -10,6 +10,9 @@
     ],
     "android": {
       "package": "org.iobotics.innovationchallange"
+    },
+    "ios": {
+      "bundleIdentifier": "org.iobotics.innovationchallange"
     }
   }
 }

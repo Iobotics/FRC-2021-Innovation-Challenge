@@ -8,9 +8,6 @@ import styles from './css/main-page-styles';
 import MenuBar from './assets/menu-bar';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-import { getStepsGQL, setStepsGQL } from '../network/graphql/steps';
-import { getMoneyGQL, setMoneyGQL } from '../network/graphql/money';
-
 import VitalsManager from '../storage/managers/vitals-manager';
 
 export default ({navigation}) => {
@@ -21,13 +18,6 @@ export default ({navigation}) => {
 
     useEffect(() => { 
         VitalsManager.getSteps(setSteps);
-
-        getMoneyGQL().then(data => {
-            if (data)
-                setMoney(data);
-
-            console.log("Current money: " + data)
-        }).catch(err => console.warn(err));
     }, []);
 
     return (
@@ -50,10 +40,9 @@ export default ({navigation}) => {
                 <TouchableOpacity onPress = {() => {
                     let newSteps = steps+1;
 
-                    VitalsManager.inputValues(newSteps);
-
                     setSteps(newSteps);
-                    setStepsGQL(newSteps);
+
+                    VitalsManager.inputValues(newSteps);
                 }}>
 
                     <View 

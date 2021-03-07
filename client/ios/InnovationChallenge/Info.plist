@@ -69,6 +69,7 @@
 	<string>InnovationChallenge</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Acumin-Pro.ttf</string>
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>
 		<string>EvilIcons.ttf</string>
@@ -85,7 +86,6 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
-		<string>Acumin-Pro.ttf</string>
 	</array>
 </dict>
 </plist>

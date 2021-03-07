@@ -7,6 +7,9 @@ import bleManager from '../bluetooth/manager/bluetooth-manager';
 
 import { backgroundColor } from './css/colors';
 
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import AuthManager from '../auth/auth-manager';
+
 export default ({navigation}) => {
    return (
         <ScrollView
@@ -30,7 +33,9 @@ export default ({navigation}) => {
 
             <SettingsButton text = "Parental Controls" />
 
-            <SettingsButton text = "Stats" />
+            <TouchableOpacity onPress = {() => {GoogleSignin.signOut(); AuthManager.setUser(null)}}>
+                <SettingsButton text = "Stats" />
+            </TouchableOpacity>
 
        </ScrollView>
    ) 
