@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "84116326670",
+    "project_id": "piliplay-8958f",
+    "storage_bucket": "piliplay-8958f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84116326670:android:7561dbf6b9fec21f5e2f5f",
+        "android_client_info": {
+          "package_name": "org.iobotics.innovationchallange"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84116326670-lblhsnko98rkdm7eqe4jed077ir10sag.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.iobotics.innovationchallange",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "84116326670-4uq9q4a0c523ok9k16k1n8cbg4pb6m43.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx_2RbHve3KtS5hyboxwETydyNeUfl0uM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84116326670-4uq9q4a0c523ok9k16k1n8cbg4pb6m43.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -50,7 +50,7 @@ export default ({navigation}) => {
                 <TouchableOpacity onPress = {() => {
                     let newSteps = steps+1;
 
-                    VitalsManager.inputValues(newSteps, money);
+                    VitalsManager.inputValues(newSteps);
 
                     setSteps(newSteps);
                     setStepsGQL(newSteps);

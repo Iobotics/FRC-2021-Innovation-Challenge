@@ -5,7 +5,7 @@ class VitalsManager extends SQLManager {
     constructor() {
         super("vitals");
 
-        //this.deleteTable();
+        this.deleteTable();
 
         this.createStepsTable();
     }
@@ -28,7 +28,6 @@ class VitalsManager extends SQLManager {
                 tx.executeSql(`CREATE TABLE IF NOT EXISTS Vitals (
                     id INT PRIMARY KEY,
                     steps INT,
-                    money INT,
                     timestamp BIGINT 
                 );`)
             }).catch(err => console.warn(err));
@@ -47,26 +46,14 @@ class VitalsManager extends SQLManager {
         }).catch(err => console.warn(err));
     }
 
-    async getMoney(setSteps) {
-        let database = await this.open();
-
-        console.log("Test");
-        database.transaction((tx) => {
-            tx.executeSql(`SELECT money FROM Vitals ORDER BY timestamp DESC;`, [], (tx, results) => {
-                console.log(results.rows.item(0).steps);
-                setSteps(results.rows.length > 0 ? results.rows.item(0).steps: 0);
-            })
-        }).catch(err => console.warn(err));
-    }
-
-    async inputValues(steps, money) {
+    async inputValues(steps) {
         let database = await this.open();
 
         console.log(steps)
 
         if (database) {
             database.transaction((tx) => {
-                tx.executeSql(`INSERT INTO Vitals (steps, money, timestamp) VALUES (${steps}, ${money}, ${Date.now()});`)
+                tx.executeSql(`INSERT INTO Vitals (steps, timestamp) VALUES (${steps}, ${Date.now()});`)
             }).catch(err => console.warn(err));
         }
     }
