@@ -26,7 +26,7 @@ class VitalsManager extends SQLManager {
         if (database) {
             database.transaction((tx) => {
                 tx.executeSql(`CREATE TABLE IF NOT EXISTS Vitals (
-                    id INT PRIMARY KEY,
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                     steps INT,
                     timestamp BIGINT 
                 );`)
