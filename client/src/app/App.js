@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar, StyleSheet, Button, View, Text } from 'react-native';
 
 import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 import BlePermissions from '../bluetooth/permissions/bluetooth-permissions';
@@ -29,6 +30,11 @@ export default class App extends React.Component {
   constructor() {
     super();
     AuthManager.addRender(this);
+
+    /**firestore().settings({
+      host: '10.0.0.2:8080',
+      ssl: false
+    });**/ //Set Firestore to use dev enviroment
 
     this.state = {update: false}
 

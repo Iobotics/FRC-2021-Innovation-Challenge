@@ -9,6 +9,7 @@ import MenuBar from './assets/menu-bar';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import VitalsManager from '../storage/managers/vitals-manager';
+import { getValues, setValues } from '../firestore/firestore-manager';
 
 export default ({navigation}) => {
 
@@ -16,8 +17,18 @@ export default ({navigation}) => {
 
     const [money, setMoney] = useState(0);
 
-    useEffect(() => { 
-        VitalsManager.getSteps(setSteps);
+    useEffect(() => {
+        getValues().then(firebase => {
+            if (firebase.empty) {
+                VitalsManager.getSteps(setSteps);
+            } else {
+                setSteps(firebase.docs[0].get("steps"));
+                setMoney(firebase.docs[0].get("money"));
+            }
+        }).catch(err => {
+            console.warn(err);
+            VitalsManager.getSteps(setSteps);
+        })
     }, []);
 
     return (
@@ -43,6 +54,8 @@ export default ({navigation}) => {
                     setSteps(newSteps);
 
                     VitalsManager.inputValues(newSteps);
+
+                    setValues(newSteps, money);
                 }}>
 
                     <View 

@@ -32,8 +32,8 @@ export default ({navigation}) => {
                             devices.concat(device.id);
 
                             if (device.name) {
-                                if (device.name == "Bluno" && device.isConnectable) {
-                                    bleManager.connectToDevice(device.id, {}).then(device => console.log("Connected to device!")).catch(error => console.warn(error));
+                                if (device.name.includes("Bluno") && device.isConnectable) {
+                                    bleManager.connectToDevice(device.id, {}).then(device => {console.log(`Connected to device!`)}).catch(error => console.warn(error));
                                     bleManager.stopDeviceScan();
                                     console.log("Found the device!")
                                 } else {
