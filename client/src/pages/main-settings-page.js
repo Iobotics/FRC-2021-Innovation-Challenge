@@ -33,7 +33,14 @@ export default ({navigation}) => {
 
                             if (device.name) {
                                 if (device.name.includes("Bluno") && device.isConnectable) {
-                                    bleManager.connectToDevice(device.id, {}).then(device => {console.log(`Connected to device!`)}).catch(error => console.warn(error));
+                                    bleManager.connectToDevice(device.id, {})
+                                    .then(device => {
+                                        console.log(`Connected to device!`);
+                                        return device.discoverAllServicesAndCharacteristics();
+                                    })
+                                    .then(device => device.services())
+                                    .then(services => services.forEach(service => console.log(service.id)))
+                                    .catch(error => console.warn(error));
                                     bleManager.stopDeviceScan();
                                     console.log("Found the device!")
                                 } else {

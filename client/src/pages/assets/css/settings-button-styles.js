@@ -23,7 +23,7 @@ export default StyleSheet.create({
         margin: 'auto',
         fontSize: 40,
         color: forColor,
-        fontFamily: 'Acumin-Pro',
+        fontFamily: 'AcuminPro-Regular',
         textAlign: 'center'
     }
 })

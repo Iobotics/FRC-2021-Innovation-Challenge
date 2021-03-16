@@ -27,7 +27,7 @@ export default StyleSheet.create({
         marginRight: 'auto',
         marginTop: 10,
         marginBottom: 10,
-        fontFamily: 'Acumin-Pro'
+        fontFamily: 'AcuminPro-Regular'
     },
     refresh_bar: {
         borderWidth: 10,
@@ -55,7 +55,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         display: 'flex',
-        fontFamily: 'Acumin-Pro'
+        fontFamily: 'AcuminPro-Regular'
     },
     money_text: {
         color: forColor,

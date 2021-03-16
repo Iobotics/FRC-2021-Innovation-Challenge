@@ -37,6 +37,10 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Allow PiliPlay to contact the watch.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>SplashScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -65,8 +69,6 @@
 	</array>
 	<key>UIRequiresFullScreen</key>
 	<true/>
-	<key>CFBundleDisplayName</key>
-	<string>InnovationChallenge</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Acumin-Pro.ttf</string>
@@ -87,5 +89,7 @@
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
 	</array>
+	<key>CFBundleDisplayName</key>
+	<string>InnovationChallenge</string>
 </dict>
 </plist>

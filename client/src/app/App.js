@@ -91,14 +91,16 @@ export default class App extends React.Component {
         </NavigationContainer>
       </>
     ) : (
-      <View>
-        <SignIn onClick={() => onGoogleButtonPress().then(creds => { 
+      <>
+        <View>
+          <SignIn onClick={() => onGoogleButtonPress().then(creds => { 
   
-          AuthManager.setUser(creds.user);
+            AuthManager.setUser(creds.user);
   
-          console.log(`Logged in user ${creds.user.uid} with email ${creds.user.email}.`)
-        })}/>
-      </View>
+            console.log(`Logged in user ${creds.user.uid} with email ${creds.user.email}.`)
+          })}/>
+        </View>
+      </>
     );
   }
   
@@ -109,7 +111,7 @@ const styles = StyleSheet.create({
   headerText : {
     color: backColor,
     fontSize: 35,
-    fontFamily: 'Acumin-Pro'
+    fontFamily: 'AcuminPro-Regular'
   },
   header: {
     backgroundColor: backgroundColor
@@ -121,7 +123,7 @@ const styles = StyleSheet.create({
   signInText: {
     color: backColor,
     textAlign: 'center',
-    fontFamily: 'Acumin-Pro'
+    fontFamily: 'AcuminPro-Regular'
   },
   signInButton: {
     margin: 'auto',

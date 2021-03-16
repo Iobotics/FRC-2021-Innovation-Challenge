@@ -9,6 +9,9 @@ target 'InnovationChallenge' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
+  
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-BluetoothPeripheral', :path => "#{permissions_path}/BluetoothPeripheral"
 
   # Uncomment the code below to enable Flipper.
   #
