@@ -60,7 +60,7 @@ export default class App extends React.Component {
     
     return this.state.update ? (
       <>
-        <StatusBar animated = {true} barStyle = "light-content"/>
+        <StatusBar animated = {true} barStyle = "dark-content"/>
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen
