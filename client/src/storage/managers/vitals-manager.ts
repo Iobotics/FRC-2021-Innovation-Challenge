@@ -34,7 +34,7 @@ class VitalsManager extends SQLManager {
         }
     }
 
-    async getSteps(setSteps) {
+    async getSteps(setSteps: (n: Number) => any) {
         let database = await this.open();
 
         console.log("Test");
@@ -46,7 +46,7 @@ class VitalsManager extends SQLManager {
         }).catch(err => console.warn(err));
     }
 
-    async inputValues(steps) {
+    async inputValues(steps: Number) {
         let database = await this.open();
 
         console.log(steps)

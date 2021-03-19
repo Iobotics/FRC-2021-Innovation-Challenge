@@ -1,16 +1,17 @@
 import { request, check, PERMISSIONS, RESULTS } from 'react-native-permissions';
 
-const LOCATION = PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION;
+const LOCATION = PERMISSIONS.IOS.BLUETOOTH_PERIPHERAL;
 
 export default async () => {
-    const current = await check(LOCATION);
+    const current = await check(LOCATION)
     if (current !== RESULTS.GRANTED) {
         try {
             const granted = await request(
                 LOCATION,
                 {
-                    title: 'Location Access',
-                    message: "This permission is required to use bluetooth on your device."
+                    title: 'Bluetooth Access',
+                    message: "This permission is required to use bluetooth on your device.",
+                    buttonPositive: "Accept"
                 }
             );
 

@@ -8,7 +8,7 @@ export function getValues() {
     }
 }
 
-export function setValues(steps, money) {
+export function setValues(steps: Number, money: Number) {
     if (AuthManager.user) {
         firestore().collection(AuthManager.user.uid).add({
             steps: steps,

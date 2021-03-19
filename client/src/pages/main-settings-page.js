@@ -9,7 +9,7 @@ import { backgroundColor } from './css/colors';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import AuthManager from '../auth/auth-manager';
 
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 
 export default ({navigation}) => {
    return (

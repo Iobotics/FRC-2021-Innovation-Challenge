@@ -1,8 +1,9 @@
 import SQLite from 'react-native-sqlite-storage';
 
 class SQLManager {
+    databaseName: String;
     
-    constructor(databaseName) {
+    constructor(databaseName: String) {
         SQLite.enablePromise(true);
 
         this.databaseName = databaseName;

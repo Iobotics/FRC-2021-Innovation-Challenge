@@ -4,55 +4,55 @@ const fontConfig = {
     web: {
       regular: {
         fontFamily: 'AcuminPro-Regular',
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
       medium: {
         fontFamily: 'AcuminPro-Regular',
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
       light: {
         fontFamily: 'AcuminPro-Regular',
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
       thin: {
         fontFamily: 'AcuminPro-Regular',
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
     },
     ios: {
       regular: {
         fontFamily: 'AcuminPro-Regular',
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
       medium: {
         fontFamily: 'AcuminPro-Regular',
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
       light: {
         fontFamily: 'AcuminPro-Regular',
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
       thin: {
         fontFamily: 'AcuminPro-Regular',
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
     },
     android: {
       regular: {
         fontFamily: 'AcuminPro-Regular',
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
       medium: {
         fontFamily: 'AcuminPro-Regular',
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
       light: {
         fontFamily: 'AcuminPro-Regular',
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
       thin: {
         fontFamily: 'AcuminPro-Regular',
-        fontWeight: 'normal',
+        fontWeight: "normal",
       },
     }
   };
