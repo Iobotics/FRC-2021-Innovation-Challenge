@@ -58,6 +58,7 @@ buck-out/
 
 # CocoaPods
 Pods/
+Podfile.lock
 
 # Expo
 .expo/
@@ -65,3 +66,6 @@ web-build/
 
 # VS Code
 .vscode/*
+
+# Lock Files
+yarn.lock
