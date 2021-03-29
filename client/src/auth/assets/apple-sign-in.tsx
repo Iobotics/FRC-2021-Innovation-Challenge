@@ -7,7 +7,7 @@ export type Props = {
 }
 
 export default (props: Props) => {
-    <AppleButton
+    return (<AppleButton
       buttonStyle={AppleButton.Style.WHITE}
       buttonType={AppleButton.Type.SIGN_IN}
       style={{
@@ -15,7 +15,7 @@ export default (props: Props) => {
         height: 45,
       }}
       onPress={() => onAppleButtonPress().then(creds => props.onClick(creds.user))}
-    />
+    />);
 
 }
 

@@ -4,16 +4,26 @@ import AuthManager from '../auth/auth-manager';
 
 export function getValues() {
     if (AuthManager.user) {
-        return firestore().collection(AuthManager.user.uid).orderBy('timestamp', 'desc').get()
+        return firestore().collection("users").doc(AuthManager.user.uid).get();
     }
 }
 
-export function setValues(steps: Number, money: Number) {
+export async function setValues(steps: Number, money: Number) {
+    const exists = (await firestore().collection("users").doc(AuthManager.user?.uid).get()).exists;
+
     if (AuthManager.user) {
-        firestore().collection(AuthManager.user.uid).add({
-            steps: steps,
-            money: money,
-            timestamp: Date.now(),
-        })
+        if (exists) {
+            firestore().collection("users").doc(AuthManager.user?.uid).update({
+                steps: steps,
+                money: money,
+                timestamp: firestore.Timestamp.now(),
+            });
+        } else {
+            firestore().collection("users").doc(AuthManager.user?.uid).set({
+                steps: steps,
+                money: money,
+                timestamp: firestore.Timestamp.now(),
+            });
+        }
     }
 }

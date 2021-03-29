@@ -19,11 +19,12 @@ export default ({navigation}) => {
 
     useEffect(() => {
         getValues().then(firebase => {
-            if (firebase.empty) {
+            if (!firebase.exists) {
                 VitalsManager.getSteps(setSteps);
             } else {
-                setSteps(firebase.docs[0].get("steps"));
-                setMoney(firebase.docs[0].get("money"));
+                const data = firebase.data;
+                setSteps(data.steps);
+                setMoney(data.money);
             }
         }).catch(err => {
             console.warn(err);

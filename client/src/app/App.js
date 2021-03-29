@@ -20,13 +20,16 @@ import { backgroundColor, backColor, forColor } from '../pages/css/colors';
 import AuthManager from '../auth/auth-manager';
 import AppleSignIn from '../auth/assets/apple-sign-in';
 
+import Fonts from '../fonts/font-provider';
+import { Provider as PaperProvider } from 'react-native-paper';
+
 const Stack = createStackNavigator();
 
 GoogleSignin.configure({
   webClientId: '84116326670-4uq9q4a0c523ok9k16k1n8cbg4pb6m43.apps.googleusercontent.com'
 });
 
-export default class App extends React.Component {
+class App extends React.Component {
 
   constructor() {
     super();
@@ -168,4 +171,12 @@ async function onGoogleButtonPress() {
 
   // Sign-in the user with the credential
   return auth().signInWithCredential(googleCredential);
+}
+
+export default () => {
+  return (
+    <PaperProvider theme={Fonts}>
+        <App/>
+    </PaperProvider>
+  );
 }
