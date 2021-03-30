@@ -22,14 +22,16 @@ export default ({navigation}) => {
             if (!firebase.exists) {
                 VitalsManager.getSteps(setSteps);
             } else {
-                const data = firebase.data;
-                setSteps(data.steps);
-                setMoney(data.money);
+                const userData = firebase.data();
+                setSteps(userData.steps);
+                setMoney(userData.money);
+
+                console.log(userData);
             }
         }).catch(err => {
             console.warn(err);
             VitalsManager.getSteps(setSteps);
-        })
+        });
     }, []);
 
     return (
