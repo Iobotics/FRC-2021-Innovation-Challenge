@@ -1,6 +1,0 @@
-module Pods_InnovationChallenge {
-  umbrella header "Pods-InnovationChallenge-umbrella.h"
-
-  export *
-  module * { export * }
-}
