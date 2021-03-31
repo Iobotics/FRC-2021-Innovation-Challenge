@@ -2066,6 +2066,21 @@
   resolved "https://registry.yarnpkg.com/@types/react-native-sqlite-storage/-/react-native-sqlite-storage-5.0.0.tgz#85f8ec1350cf91cfed01cbab100e9339287943ac"
   integrity sha512-kn5J+oLU//Jk9YshL9bcrm1Pxy4fp/7Pk8+yGZIeu/aEG8SmG75nxDzpfTopEluThDtjPDxFUWVDD0Ij/eCNJg==
 
+"@types/react-native-vector-icons@^6.4.6":
+  version "6.4.6"
+  resolved "https://registry.yarnpkg.com/@types/react-native-vector-icons/-/react-native-vector-icons-6.4.6.tgz#848e3b14572def56212cafbf5cb1254b445bfb41"
+  integrity sha512-lAyxNfMd5L1xZvXWsGcJmNegDf61TAp40uL6ashNNWj9W3IrDJO59L9+9inh0Y2MsEZpLTdxzVU8Unb4/0FQng==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+
+"@types/react-native@*":
+  version "0.64.2"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.64.2.tgz#2e344aeec0b4eb21fb9eaa0ed8973245c5601d56"
+  integrity sha512-w2y04h+GVLY+OMlFSmq4adPuS51XtEp1yUr83OvXf+moMQ4zDG1Q07HhyvYDXdc+BSS9ANHySBqVCz0hFxli9Q==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-native@^0.63.52":
   version "0.63.52"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.52.tgz#449beb4a413ec0f2c172cbf676a95f5b0952adf4"

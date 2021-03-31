@@ -23,6 +23,8 @@ import AppleSignIn from '../auth/assets/apple-sign-in';
 import Fonts from '../fonts/font-provider';
 import { Provider as PaperProvider } from 'react-native-paper';
 
+import AntIcon from 'react-native-vector-icons/AntDesign';
+
 const Stack = createStackNavigator();
 
 GoogleSignin.configure({
@@ -96,6 +98,7 @@ class App extends React.Component {
               component = {MainSettingsPage}
               options = {{
                 headerBackImage: BackArrow,
+                headerBackTitleVisible: false,
                 headerTitleAlign: 'center',
                 headerTitleStyle: styles.headerText,
                 headerStyle: styles.header
@@ -141,7 +144,7 @@ const styles = StyleSheet.create({
   },
   signInButton: {
     //margin: 'auto',
-    //marginHorizontal: '10%',
+    //marginHorizontal: '30%',
     backgroundColor: backColor,
     //color: forColor
   }
@@ -152,9 +155,9 @@ function SignIn(props) {
     <View style = {styles.signInView}>
       <Text style = {[styles.signInText, {fontSize:30}]}>Welcome to PiliPlay!</Text>
       <Text style = {[styles.signInText, {fontSize:20}]}>Please sign in before continuing!</Text>
-      <Button onPress={() => onGoogleButtonPress().then(creds => {
+      <AntIcon.Button onPress={() => onGoogleButtonPress().then(creds => {
         props.onClick(creds.user);
-      })} style = {styles.signInButton} title="Sign In With Google!">Sign In With Google!</Button>
+      })} style = {styles.signInButton} name="google">Sign in with Google</AntIcon.Button>
       {
         Platform.OS === "ios" ? (<AppleSignIn onClick={user => props.onClick(user)}/>) : (<></>)
       }
