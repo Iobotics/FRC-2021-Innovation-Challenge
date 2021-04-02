@@ -1,10 +1,9 @@
 import React from 'react';
-import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
+import auth from '@react-native-firebase/auth';
 import { AppleButton, appleAuth } from '@invertase/react-native-apple-authentication';
 
-export type Props = {
-    onClick: (n: FirebaseAuthTypes.User) => any
-}
+import { Props } from './sign-in-types';
+
 
 export default (props: Props) => {
     return (<AppleButton

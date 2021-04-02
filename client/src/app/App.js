@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StatusBar, StyleSheet, Button, View, Text, Platform } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
 
 import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
+//import firestore from '@react-native-firebase/firestore';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 import BlePermissions from '../bluetooth/permissions/bluetooth-permissions';
@@ -18,12 +18,11 @@ import BackArrow from '../pages/assets/back-arrow';
 import { backgroundColor, backColor, forColor } from '../pages/css/colors';
 
 import AuthManager from '../auth/auth-manager';
-import AppleSignIn from '../auth/assets/apple-sign-in';
+import SignIn from '../pages/sign-in-page';
 
 import Fonts from '../fonts/font-provider';
 import { Provider as PaperProvider } from 'react-native-paper';
 
-import AntIcon from 'react-native-vector-icons/AntDesign';
 
 const Stack = createStackNavigator();
 
@@ -56,7 +55,7 @@ class App extends React.Component {
         GoogleSignin.getCurrentUser()
         .then(user => { if (user) return auth.GoogleAuthProvider.credential(user.idToken)})
         .then(user => { if (user) return auth().signInWithCredential(user)})
-        .then(user => { 
+        .then(user => {
           if (user) { 
             AuthManager.setUser(user.user);
           } 
@@ -108,16 +107,7 @@ class App extends React.Component {
         </NavigationContainer>
       </>
     ) : (
-      <>
-        <View>
-          <SignIn onClick={user => { 
-  
-            AuthManager.setUser(user);
-  
-            console.log(`Logged in user ${user.uid} with email ${user.email}.`)
-          }}/>
-        </View>
-      </>
+      <SignIn/>
     );
   }
   
@@ -132,49 +122,8 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: backgroundColor
-  },
-  signInView: {
-    backgroundColor: backgroundColor,
-    height: '100%'
-  },
-  signInText: {
-    color: backColor,
-    textAlign: 'center',
-    fontFamily: 'AcuminPro-Regular'
-  },
-  signInButton: {
-    //margin: 'auto',
-    //marginHorizontal: '30%',
-    backgroundColor: backColor,
-    //color: forColor
   }
 });
-
-function SignIn(props) {
-  return (
-    <View style = {styles.signInView}>
-      <Text style = {[styles.signInText, {fontSize:30}]}>Welcome to PiliPlay!</Text>
-      <Text style = {[styles.signInText, {fontSize:20}]}>Please sign in before continuing!</Text>
-      <AntIcon.Button onPress={() => onGoogleButtonPress().then(creds => {
-        props.onClick(creds.user);
-      })} style = {styles.signInButton} name="google">Sign in with Google</AntIcon.Button>
-      {
-        Platform.OS === "ios" ? (<AppleSignIn onClick={user => props.onClick(user)}/>) : (<></>)
-      }
-    </View>
-  )
-}
-
-async function onGoogleButtonPress() {
-  // Get the users ID token
-  const { idToken } = await GoogleSignin.signIn();
-
-  // Create a Google credential with the token
-  const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-
-  // Sign-in the user with the credential
-  return auth().signInWithCredential(googleCredential);
-}
 
 export default () => {
   return (

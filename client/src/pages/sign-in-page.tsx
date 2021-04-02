@@ -1,41 +1,51 @@
 import React from 'react';
 
-import { View, Text, Platform } from 'react-native';
-import AntIcon from 'react-native-vector-icons/AntDesign';
+import { View, Text, Platform, StyleSheet } from 'react-native';
 
-import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { FirebaseAuthTypes } from '@react-native-firebase/auth'
 
 import AppleSignIn from '../auth/assets/apple-sign-in';
+import GoogleSignIn from '../auth/assets/google-sign-in';
 
-export type Props = {
-    onClick: (n: FirebaseAuthTypes.User) => undefined 
-}
+import AuthManager from '../auth/auth-manager';
 
-export default function SignIn(props: Props) {
+import { backColor, backgroundColor } from './css/colors';
+
+
+export default function SignIn() {
     return (
       <View style = {styles.signInView}>
         <Text style = {[styles.signInText, {fontSize:30}]}>Welcome to PiliPlay!</Text>
         <Text style = {[styles.signInText, {fontSize:20}]}>Please sign in before continuing!</Text>
-        <View>
-          <AntIcon.Button onPress={() => onGoogleButtonPress().then(creds => {
-            props.onClick(creds.user);
-          })} style = {styles.signInButton} name="google">Sign in with Google</AntIcon.Button>
+        <View style = {styles.authTypesView}>
+          <GoogleSignIn onClick={signInHandler}/>
           {
-            Platform.OS === "ios" ? (<AppleSignIn onClick={user => props.onClick(user)}/>) : (<></>)
+            Platform.OS === "ios" ? (<AppleSignIn onClick={signInHandler}/>) : (<></>) //Add Apple Auth due to App Store Requirement
           }
         </View>
       </View>
     )
 }
 
-async function onGoogleButtonPress() {
-    // Get the users ID token
-    const { idToken } = await GoogleSignin.signIn();
+const signInHandler = (user : FirebaseAuthTypes.User) => {
+  AuthManager.setUser(user);
   
-    // Create a Google credential with the token
-    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-  
-    // Sign-in the user with the credential
-    return auth().signInWithCredential(googleCredential);
+  console.log(`Logged in user ${user.uid} with email ${user.email}.`)
 }
+
+const styles = StyleSheet.create({
+  signInView: {
+    backgroundColor: backgroundColor,
+    height: '100%'
+  },
+  signInText: {
+    color: backColor,
+    textAlign: 'center',
+    fontFamily: 'AcuminPro-Regular'
+  },
+  authTypesView: {
+    flex: 1,
+    justifyContent: 'center',
+    flexDirection: 'column'
+  }
+});
