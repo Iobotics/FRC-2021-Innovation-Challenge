@@ -6,10 +6,9 @@ export default StyleSheet.create({
     bottom_bar: {
         backgroundColor: backColor,
         flex: 1,
-        display: 'inline',
+        display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
-        display: 'flex'
     },
     bar_element_view: {
         marginTop: 'auto',

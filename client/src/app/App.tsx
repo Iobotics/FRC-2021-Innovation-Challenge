@@ -4,7 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar, StyleSheet } from 'react-native';
 
 import auth from '@react-native-firebase/auth';
-//import firestore from '@react-native-firebase/firestore';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 import BlePermissions from '../bluetooth/permissions/bluetooth-permissions';
@@ -26,26 +25,15 @@ import { Provider as PaperProvider } from 'react-native-paper';
 
 const Stack = createStackNavigator();
 
+type State = {
+  update: boolean;
+}
+
 GoogleSignin.configure({
   webClientId: '84116326670-4uq9q4a0c523ok9k16k1n8cbg4pb6m43.apps.googleusercontent.com'
 });
 
-class App extends React.Component {
-
-  constructor() {
-    super();
-
-    this.state = {
-      update: false
-    }
-
-    this.callback = this.callback.bind(this);
-
-    /*firestore().settings({
-      host: '10.0.0.2:8080',
-      ssl: false
-    });*/ //Set Firestore to use dev enviroment
-  }
+class App extends React.Component<{}, State> {
 
   componentDidMount() {
     BlePermissions();
@@ -63,6 +51,8 @@ class App extends React.Component {
         .catch(error => console.warn(error));
       }
     });
+
+    this.callback = this.callback.bind(this);
 
     AuthManager.addRender(this.callback);
   }

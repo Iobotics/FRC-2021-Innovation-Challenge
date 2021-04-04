@@ -1,10 +1,15 @@
 import firestore from '@react-native-firebase/firestore';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RouteProp } from '@react-navigation/native';
+import { RootStackParamList } from './types';
+
 import AuthManager from '../auth/auth-manager';
 
-export function getValues() {
+export async function getValues() {
     if (AuthManager.user) {
-        return firestore().collection("users").doc(AuthManager.user.uid).get();
+        let doc = await firestore().collection("users").doc(AuthManager.user.uid).get();
+        return Promise.resolve(doc);
     }
 }
 

@@ -3,11 +3,24 @@ import { View, Text } from 'react-native';
 import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RouteProp } from '@react-navigation/native';
+import { RootStackParamList } from './types';
+
 import styles from './css/avatar-page-styles';
 
 import MenuBar from './assets/menu-bar';
 
-export default ({navigation}) => {
+type ScreenRouteProp = RouteProp<RootStackParamList, 'Avatar'>;
+
+type ScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Avatar'>;
+
+type Props = {
+  route: ScreenRouteProp;
+  navigation: ScreenNavigationProp;
+};
+
+export default ({ navigation }: Props) => {
 
     return (
         <>

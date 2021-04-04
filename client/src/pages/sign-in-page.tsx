@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
   authTypesView: {
     flex: 1,
     justifyContent: 'center',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    alignItems: 'center'
   }
 });

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import SQLManager from '../SQL-manager';
 
 class VitalsManager extends SQLManager {
@@ -34,7 +36,7 @@ class VitalsManager extends SQLManager {
         }
     }
 
-    async getSteps(setSteps: (n: Number) => any) {
+    async getSteps(setSteps: React.Dispatch<React.SetStateAction<number>>) {
         let database = await this.open();
 
         console.log("Test");

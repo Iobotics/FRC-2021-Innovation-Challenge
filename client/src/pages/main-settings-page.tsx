@@ -1,6 +1,10 @@
 import React from 'react';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RouteProp } from '@react-navigation/native';
+import { RootStackParamList } from './types';
+
 import SettingsButton from './assets/settings-button';
 
 import bleManager from '../bluetooth/manager/bluetooth-manager';
@@ -11,9 +15,18 @@ import AuthManager from '../auth/auth-manager';
 
 import { Platform } from 'react-native';
 
-let uuid = undefined;
+type ScreenRouteProp = RouteProp<RootStackParamList, 'Settings'>;
 
-export default ({navigation}) => {
+type ScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Settings'>;
+
+type Props = {
+  route: ScreenRouteProp;
+  navigation: ScreenNavigationProp;
+};
+
+let uuid: string | undefined = undefined;
+
+export default ({navigation}: Props) => {
    return (
         <ScrollView
             style = {{
@@ -34,46 +47,47 @@ export default ({navigation}) => {
                         if (error) {
                             console.log(JSON.stringify(error));
                         } else {
+                            if (device) {
+                                if(!devices.includes(device.id)) {
+                                    devices = devices.concat(device.id);
 
-                            if(!devices.includes(device.id)) {
-                                devices = devices.concat(device.id);
+                                    if (device.name) {
+                                        if (device.name.includes("Bluno") && ((Platform.OS != "ios") || device.isConnectable)) {
+                                            bleManager.stopDeviceScan();
 
-                                if (device.name) {
-                                    if (device.name.includes("Bluno") && ((Platform.OS != "ios") || device.isConnectable)) {
-                                        bleManager.stopDeviceScan();
+                                            active = false;
+                                            uuid = device.id;
 
-                                        active = false;
-                                        uuid = device.id;
-
-                                        console.log("Found the device!")
-                                        const connectedDevice = await bleManager.connectToDevice(device.id, {})
+                                            console.log("Found the device!")
+                                            const connectedDevice = await bleManager.connectToDevice(device.id, {})
         
-                                        if (connectedDevice) {
-                                            console.log(`Connected to device!`);
-                                            await connectedDevice.discoverAllServicesAndCharacteristics();
+                                                if (connectedDevice) {
+                                                console.log(`Connected to device!`);
+                                                await connectedDevice.discoverAllServicesAndCharacteristics();
                                         
-                                            for (var service in connectedDevice.serviceUUIDs) {
-                                                console.log(`Service ID: ${service}`);
-                                            }
+                                                for (var service in connectedDevice.serviceUUIDs) {
+                                                    console.log(`Service ID: ${service}`);
+                                                }
 
-                                            const services = await connectedDevice.services();
-                                            const characteristics = await services[0].characteristics();
-                                            characteristics.forEach(characteristic => console.log(`Characteristic - ID ${characteristic.id}, Readable ${characteristic.isReadable}`))
+                                                const services = await connectedDevice.services();
+                                                const characteristics = await services[0].characteristics();
+                                                characteristics.forEach(characteristic => console.log(`Characteristic - ID ${characteristic.id}, Readable ${characteristic.isReadable}`))
 
-                                            const characteristic = await characteristics[0].read();
+                                                const characteristic = await characteristics[0].read();
 
-                                            console.log(`Read Value ${characteristic.value}`)
+                                                console.log(`Read Value ${characteristic.value}`)
 
-                                            connectedDevice.cancelConnection();
+                                                connectedDevice.cancelConnection();
+                                            }   
+                                        } else {
+                                            console.log(`Found device with name: ${device.name} ${Platform.OS == "ios" ? `, is connectable ${device.isConnectable}` : ""}`);
                                         }
                                     } else {
-                                        console.log(`Found device with name: ${device.name} ${Platform.OS == "ios" ? `, is connectable ${device.isConnectable}` : ""}`);
+                                        console.log(`Found device with ID: ${device.id}`);
                                     }
                                 } else {
-                                    console.log(`Found device with ID: ${device.id}`);
+                                    //console.log("Skipping already scanned device.");
                                 }
-                            } else {
-                                //console.log("Skipping already scanned device.");
                             }
                         }
                     });
@@ -94,7 +108,7 @@ export default ({navigation}) => {
                             console.log(`Connected to device!`);
                             await connectedDevice.discoverAllServicesAndCharacteristics();
                                         
-                            for (var service in connectedDevice.serviceUUIDs) {
+                            for (let service in connectedDevice.serviceUUIDs) {
                                 console.log(`Service ID: ${service}`);
                             }
 

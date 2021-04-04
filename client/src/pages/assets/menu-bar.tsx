@@ -4,9 +4,18 @@ import { useRoute } from '@react-navigation/native';
 import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../types';
+
 import styles from './css/menu-bar-styles';
 
-export default (props) => {
+type ScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'> | StackNavigationProp<RootStackParamList, 'Avatar'>;
+
+type Props = {
+  navigation: ScreenNavigationProp;
+};
+
+export default (props: Props) => {
     
     const navigation = props.navigation;
 

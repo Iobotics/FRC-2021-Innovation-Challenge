@@ -8,7 +8,7 @@ class UserManager {
         this.user = null;
     }
 
-    setUser(user: FirebaseAuthTypes.User) {
+    setUser(user: FirebaseAuthTypes.User | null) {
         this.user = user;
         if (this.render)
             this.render();

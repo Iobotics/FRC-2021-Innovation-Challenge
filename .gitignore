@@ -57,7 +57,7 @@ buck-out/
 *.jsbundle
 
 # CocoaPods
-Pods/
+client/ios/Pods/
 Podfile.lock
 
 # Expo

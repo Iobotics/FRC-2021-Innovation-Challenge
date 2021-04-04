@@ -3,7 +3,11 @@ import { View, Text } from 'react-native';
 
 import styles from './css/settings-button-styles';
 
-export default (props) => {
+type Props = {
+    text: string
+}
+
+export default (props: Props) => {
 
     return (
             <View style = {styles.view}>

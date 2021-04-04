@@ -3,6 +3,10 @@ import { View, Text } from 'react-native';
 import FA5Icon from 'react-native-vector-icons/FontAwesome5';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RouteProp } from '@react-navigation/native';
+import { RootStackParamList } from './types';
+
 import styles from './css/main-page-styles';
 
 import MenuBar from './assets/menu-bar';
@@ -11,20 +15,29 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import VitalsManager from '../storage/managers/vitals-manager';
 import { getValues, setValues } from '../firestore/firestore-manager';
 
-export default ({navigation}) => {
+type ScreenRouteProp = RouteProp<RootStackParamList, 'Home'>;
+
+type ScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
+
+type Props = {
+  route: ScreenRouteProp;
+  navigation: ScreenNavigationProp;
+};
+
+export default ({ navigation } : Props) => {
 
     const [steps, setSteps] = useState(0);
 
     const [money, setMoney] = useState(0);
 
     useEffect(() => {
-        getValues().then(firebase => {
-            if (!firebase.exists) {
+        getValues()?.then(firebase => {
+            if (!firebase?.exists || !(firebase)) {
                 VitalsManager.getSteps(setSteps);
             } else {
                 const userData = firebase.data();
-                setSteps(userData.steps);
-                setMoney(userData.money);
+                setSteps(userData?.steps);
+                setMoney(userData?.money);
 
                 console.log(userData);
             }
